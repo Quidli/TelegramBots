@@ -1,12 +1,8 @@
 package org.telegram.telegrambots.meta.api.objects;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.telegram.telegrambots.meta.api.interfaces.BotApiObject;
+import com.fasterxml.jackson.annotation.*;
+import lombok.*;
+import org.telegram.telegrambots.meta.api.interfaces.*;
 
 /**
  * This object represents a service message about a user allowing a bot added to the attachment menu to write messages.
@@ -19,6 +15,7 @@ import org.telegram.telegrambots.meta.api.interfaces.BotApiObject;
 @Setter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class WriteAccessAllowed implements BotApiObject {
 
     private static final String WEB_APP_NAME_FIELD = "web_app_name";
