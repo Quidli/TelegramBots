@@ -17,22 +17,6 @@
     <url>https://github.com/rubenlagus/TelegramBots</url>
     <description>Extensions Bots for Telegram Bots library</description>
 
-    <!--    <issueManagement>-->
-    <!--        <url>https://github.com/rubenlagus/TelegramBots/issues</url>-->
-    <!--        <system>GitHub Issues</system>-->
-    <!--    </issueManagement>-->
-
-    <!--    <scm>-->
-    <!--        <url>https://github.com/rubenlagus/TelegramBots</url>-->
-    <!--        <connection>scm:git:git://github.com/rubenlagus/TelegramBots.git</connection>-->
-    <!--        <developerConnection>scm:git:git@github.com:rubenlagus/TelegramBots.git</developerConnection>-->
-    <!--    </scm>-->
-
-    <!--    <ciManagement>-->
-    <!--        <url>https://travis-ci.org/rubenlagus/TelegramBots</url>-->
-    <!--        <system>Travis</system>-->
-    <!--    </ciManagement>-->
-
     <developers>
         <developer>
             <email>rberlopez@gmail.com</email>
@@ -49,32 +33,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/quidli/TelegramBots</url>
-        </repository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>github</id>
-            <name>github</name>
-            <url>https://maven.pkg.github.com/quidli/parent-pom</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <properties>
         <java.version>11</java.version>
@@ -249,4 +207,13 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <!-- GitHub packages repository for GitHub action to publish the artifacts -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Quidli/TelegramBots</url>
+        </repository>
+    </distributionManagement>
 </project>

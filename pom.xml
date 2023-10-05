@@ -30,14 +30,6 @@
     <url>https://github.com/rubenlagus/TelegramBots</url>
     <description>Easy to use library to create Telegram Bots</description>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/quidli/TelegramBots</url>
-        </repository>
-    </distributionManagement>
-
     <repositories>
         <repository>
             <id>github</id>
@@ -65,16 +57,6 @@
         </developer>
     </developers>
 
-    <!--    <distributionManagement>-->
-    <!--        <snapshotRepository>-->
-    <!--            <id>ossrh</id>-->
-    <!--            <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
-    <!--        </snapshotRepository>-->
-    <!--        <repository>-->
-    <!--            <id>ossrh</id>-->
-    <!--            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
-    <!--        </repository>-->
-    <!--    </distributionManagement>-->
 
     <properties>
         <java.version>11</java.version>
@@ -155,7 +137,7 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons.version}</version>
             </dependency>
-            
+
             <!-- Included to enforce common version-->
             <dependency>
                 <groupId>jakarta.annotation</groupId>
@@ -253,4 +235,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- GitHub packages repository for GitHub action to publish the artifacts -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Quidli/TelegramBots</url>
+        </repository>
+    </distributionManagement>
 </project>
