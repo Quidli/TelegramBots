@@ -1,0 +1,17 @@
+name: Publish to GitHub Packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+      - staging
+      - main
+
+jobs:
+  publish-to-github-packages:
+    if: ${{ github.ref_name == 'dev' }}
+    uses: quidli/github-actions/.github/workflows/publish-artifact.yml@main
+    secrets:
+      username: ${{ secrets.QUIDLI_PACKAGES_USERNAME }}
+      password: ${{ secrets.QUIDLI_PACKAGES_TOKEN }}

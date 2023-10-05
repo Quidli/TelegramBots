@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.telegram</groupId>
         <artifactId>Bots</artifactId>
-        <version>6.8.0</version>
+        <version>6.8.0-FIX</version>
     </parent>
 
     <artifactId>telegrambots-abilities</artifactId>
@@ -17,21 +17,21 @@
     <url>https://github.com/rubenlagus/TelegramBots</url>
     <description>AbilityBot Extension and Abstraction</description>
 
-    <issueManagement>
-        <url>https://github.com/rubenlagus/TelegramBots/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>
+    <!--    <issueManagement>-->
+    <!--        <url>https://github.com/rubenlagus/TelegramBots/issues</url>-->
+    <!--        <system>GitHub Issues</system>-->
+    <!--    </issueManagement>-->
 
-    <scm>
-        <url>https://github.com/rubenlagus/TelegramBots</url>
-        <connection>scm:git:git://github.com/rubenlagus/TelegramBots.git</connection>
-        <developerConnection>scm:git:git@github.com:rubenlagus/TelegramBots.git</developerConnection>
-    </scm>
+    <!--    <scm>-->
+    <!--        <url>https://github.com/rubenlagus/TelegramBots</url>-->
+    <!--        <connection>scm:git:git://github.com/rubenlagus/TelegramBots.git</connection>-->
+    <!--        <developerConnection>scm:git:git@github.com:rubenlagus/TelegramBots.git</developerConnection>-->
+    <!--    </scm>-->
 
-    <ciManagement>
-        <url>https://travis-ci.org/rubenlagus/TelegramBots</url>
-        <system>Travis</system>
-    </ciManagement>
+    <!--    <ciManagement>-->
+    <!--        <url>https://travis-ci.org/rubenlagus/TelegramBots</url>-->
+    <!--        <system>Travis</system>-->
+    <!--    </ciManagement>-->
 
     <developers>
         <developer>
@@ -57,15 +57,30 @@
     </licenses>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/quidli/TelegramBots</url>
         </repository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>github</name>
+            <url>https://maven.pkg.github.com/quidli/parent-pom</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <properties>
         <java.version>11</java.version>
@@ -84,7 +99,7 @@
         <dependency>
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots</artifactId>
-            <version>6.8.0</version>
+            <version>6.8.0-FIX</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -133,17 +148,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
