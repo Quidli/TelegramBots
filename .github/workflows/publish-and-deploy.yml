@@ -4,15 +4,29 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - dev
-      - staging
       - main
 
 jobs:
-
   publish-to-github-packages:
-    if: ${{ github.ref_name == 'dev' }}
-    uses: publish-artifact.yml@main
     secrets:
       username: ${{ secrets.QUIDLI_PACKAGES_USERNAME }}
       password: ${{ secrets.QUIDLI_PACKAGES_TOKEN }}
+      publish-artifact:
+        name: Publish artifact to GitHub packages
+        runs-on: ubuntu-latest
+        permissions:
+          contents: read
+          packages: write
+        steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-java@v3
+            with:
+              java-version: '11'
+              distribution: 'temurin'
+              cache: maven
+          - name: Configure Maven settings.xml with PAT
+            uses: whelk-io/maven-settings-xml-action@v20
+            with:
+              servers: '[{ "id": "github", "username": "${{ secrets.username }}", "password": "${{ secrets.password }}" }]'
+          - name: Publish package
+            run: mvn --batch-mode deploy -DskipTests
