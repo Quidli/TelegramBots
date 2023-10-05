@@ -9,9 +9,10 @@ on:
       - main
 
 jobs:
+
   publish-to-github-packages:
     if: ${{ github.ref_name == 'dev' }}
-    uses: quidli/github-actions/.github/workflows/publish-artifact.yml@main
+    uses: publish-artifact.yml@main
     secrets:
       username: ${{ secrets.QUIDLI_PACKAGES_USERNAME }}
       password: ${{ secrets.QUIDLI_PACKAGES_TOKEN }}
