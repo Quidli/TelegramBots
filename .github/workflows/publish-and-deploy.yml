@@ -25,4 +25,4 @@ jobs:
         with:
           servers: '[{ "id": "github", "username": "${{ secrets.QUIDLI_PACKAGES_USERNAME }}", "password": "${{ secrets.QUIDLI_PACKAGES_TOKEN }}" }]'
       - name: Publish package
-        run: mvn --batch-mode deploy -DskipTests
+        run: mvn --batch-mode deploy -Dgpg.skip=true -DskipTests
