@@ -5,32 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.telegram</groupId>
+        <groupId>li.quid.fix-telegram</groupId>
         <artifactId>Bots</artifactId>
         <version>6.8.0-FIX</version>
     </parent>
 
     <artifactId>telegrambots-chat-session-bot</artifactId>
     <packaging>jar</packaging>
-
-    <name>Telegram Bots Chat Session Bot</name>
-    <url>https://github.com/rubenlagus/TelegramBots</url>
-    <description>Telegram bot with chat session support</description>
-
-    <developers>
-        <developer>
-            <email>rberlopez@gmail.com</email>
-            <name>Ruben Bermudez</name>
-            <url>https://github.com/rubenlagus</url>
-            <id>rubenlagus</id>
-        </developer>
-        <developer>
-            <email>bochkarevei@gmail.com</email>
-            <name>Egor Bochkarev</name>
-            <url>https://github.com/EgorBochkarev</url>
-            <id>EgorBochkarev</id>
-        </developer>
-    </developers>
 
     <licenses>
         <license>
@@ -55,7 +36,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.telegram</groupId>
+            <groupId>li.quid.fix-telegram</groupId>
             <artifactId>telegrambots</artifactId>
             <version>6.8.0-FIX</version>
         </dependency>
@@ -80,20 +61,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M6</version>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.2.0</version>
