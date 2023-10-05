@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>li.quid.fix-telegram</groupId>
-    <artifactId>Bots</artifactId>
+    <artifactId>bots</artifactId>
     <packaging>pom</packaging>
     <version>6.8.0-FIX</version>
 
