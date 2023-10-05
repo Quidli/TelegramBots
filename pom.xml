@@ -236,12 +236,4 @@
         </plugins>
     </build>
 
-    <!-- GitHub packages repository for GitHub action to publish the artifacts -->
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/Quidli/TelegramBots</url>
-        </repository>
-    </distributionManagement>
 </project>
