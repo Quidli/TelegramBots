@@ -6,7 +6,7 @@
 
     <groupId>org.telegram</groupId>
     <artifactId>Bots</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <version>6.8.0-FIX</version>
 
     <modules>
