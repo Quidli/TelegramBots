@@ -26,9 +26,9 @@ Just import add the library to your project with one of these options:
 ```xml
     <dependency>
         <groupId>org.telegram</groupId>
-        <artifactId>telegrambots</artifactId>
-        <version>6.8.0</version>
-    </dependency>
+    <artifactId>telegrambots</artifactId>
+    <version>6.8.0-FIX</version>
+</dependency>
 ```
 
   2. Using Gradle: 
